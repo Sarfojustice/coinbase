@@ -5,12 +5,12 @@ export default function Countless() {
         <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-20">
 
           {/* Left - image in light gray rounded card */}
-          <div className="flex-1 max-w-2xl">
-            <div className="bg-[#f2f2f2] rounded-3xl overflow-hidden p-8 lg:p-12 flex items-center justify-center">
+          <div className="flex-1 max-w-5xl">
+            <div className="bg-[#f2f2f2] rounded-[40px] lg:rounded-[60px] overflow-hidden aspect-[4/3] pt-6 px-8 pb-0 flex items-end justify-center">
               <img
                 src="/countless.avif"
                 alt="Base App"
-                className="w-full h-auto object-contain"
+                className="w-3/4 h-auto object-contain"
               />
             </div>
           </div>
@@ -19,7 +19,9 @@ export default function Countless() {
           <div className="flex-1 max-w-[520px]">
             {/* Base App badge */}
             <div className="inline-flex items-center gap-2 border border-gray-300 rounded-full px-4 py-2 mb-8">
-              <img src="/logo.svg" alt="Coinbase" className="w-4 h-4" />
+              <div className="bg-[#f2f2f2] rounded-[8px] sm:rounded-[10px] p-1 flex items-center justify-center">
+                <img src="/logo.svg" alt="Coinbase" className="w-4 h-4" />
+              </div>
               <span className="text-[13px] font-semibold text-gray-900 tracking-widest uppercase">Base App</span>
             </div>
 
