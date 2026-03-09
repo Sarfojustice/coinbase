@@ -56,13 +56,13 @@ export default function CryptoBasics() {
                 <img
                   src={article.img}
                   alt={article.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-300"
                 />
               </div>
 
               {/* Title */}
               <h3
-                className={`text-[22px] leading-[1.3] text-gray-900 font-normal ${article.underline ? 'underline underline-offset-4' : ''}`}
+                className="text-[22px] leading-[1.3] text-gray-900 font-normal group-hover:underline"
                 style={{
                   fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                   fontWeight: 400,
