@@ -15,7 +15,7 @@ export default function useCryptoData(perPage = 20) {
   const fetchData = useCallback(async () => {
     try {
       const [cryptoRes, rateRes] = await Promise.all([
-        fetch(`${API_URL}/crypto`),
+        fetch(`${API_URL}/crypto`, { credentials: 'include' }),
         fetch('https://open.er-api.com/v6/latest/USD'),
       ])
 

@@ -12,6 +12,7 @@ export default function Profile() {
     const fetchProfile = async () => {
       try {
         const response = await fetch(`${API_URL}/auth/profile`, {
+          credentials: 'include',
           headers: {
             // If using cookies, we need credentials: 'include'
             // If using Bearer token, we need to store it somewhere. 
@@ -50,7 +51,7 @@ export default function Profile() {
       )}
       <button 
         onClick={async () => {
-          await fetch(`${API_URL}/auth/logout`)
+          await fetch(`${API_URL}/auth/logout`, { credentials: 'include' })
           navigate('/signin')
         }}
         className="mt-6 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
