@@ -24,8 +24,15 @@ export default function useCryptoData(perPage = 20) {
       const cryptoData = await cryptoRes.json()
       const rateData = await rateRes.json()
 
-      // The backend returns { status: 'success', data: { cryptos: [...] } }
-      setCoins(cryptoData.data.cryptos)
+      // Map backend fields to frontend expectations
+      const mappedCoins = cryptoData.data.cryptos.map(c => ({
+        ...c,
+        id: c._id || c.id,
+        current_price: c.price,
+        price_change_percentage_24h: parseFloat(c.change24h || 0)
+      }))
+
+      setCoins(mappedCoins)
       setGhsRate(rateData.rates.GHS)
       setLoading(false)
       setError(false)

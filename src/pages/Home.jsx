@@ -61,8 +61,8 @@ function CryptoExploreSection() {
     if (!coins.length) return []
     if (activeTab === 'Tradable') return coins.slice(0, 6)
     if (activeTab === 'Top gainers')
-      return [...coins].sort((a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h).slice(0, 6)
-    return coins.slice(14, 20)
+      return [...coins].sort((a, b) => (b.price_change_percentage_24h || 0) - (a.price_change_percentage_24h || 0)).slice(0, 6)
+    return [...coins].sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0)).slice(0, 6)
   }, [coins, activeTab])
 
   const displayCoins = getTabCoins()
